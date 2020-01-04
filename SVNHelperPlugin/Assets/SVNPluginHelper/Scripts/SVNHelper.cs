@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * References:
+ * https://www.c-sharpcorner.com/UploadFile/dbd837/svn-api-with-C-Sharp-browse-files-in-svn706/
+ *https://tortoisesvn.net/docs/release/TortoiseSVN_en/tsvn-automation.html#tsvn-automation-basics
+ */
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -8,46 +14,43 @@ using Debug = UnityEngine.Debug;
 
 public class SVNHelper : MonoBehaviour
 {
+    private static string SVNURL = Application.dataPath;
+    private static string commandPrefix = @"/c " + "TortoiseProc.exe /command:";
+
     [MenuItem("SVNHelper/Commit")]
-    static void Commit()
+    private static void Commit()
     {
-        string SVNURL="https://192.168.56.1/!/#MyUnityProjects";
-        string OUTPUT_PATH = "D:\\Git\\Easy Development Plugin\\OUTPUT.txt";
-        //string command = @"/c " + "TortoiseProc.exe /command:repobrowser /path:" + SVNURL + " /outfile:" + OUTPUT_PATH;
-        string command =  @"/c " +"svn.exe /command:commit /message:" + "THis is demo commit from Unity";
-        ExecuteSVNCommand(command);
+        var svn_command = commandPrefix + @"commit /path:" + SVNURL + " /logmsg:\"test log message\" /closeonend:0";
+        ExecuteSVNCommand(svn_command);
     }
 
-    private static void ExecuteSVNCommand(string SVNCommand)  
-    {  
-        try  
-        {  
-            ProcessStartInfo processStartInfo = new ProcessStartInfo();  
-            processStartInfo.WorkingDirectory = @"C:\Program Files\TortoiseSVN\bin";  
-            processStartInfo.RedirectStandardInput = true;  
-            processStartInfo.CreateNoWindow = true;  
-            processStartInfo.WindowStyle = ProcessWindowStyle.Hidden;  
-            processStartInfo.FileName = "cmd.exe";                  
-            processStartInfo.UseShellExecute = false;  
-            processStartInfo.Arguments = SVNCommand;  
-            Process process = Process.Start(processStartInfo);  
-            process.WaitForExit();  
-  
-            int eCode = process.ExitCode;  
-            if (eCode == 0)  
+    private static void ExecuteSVNCommand(string SVNCommand)
+    {
+        try
+        {
+            ProcessStartInfo processStartInfo = new ProcessStartInfo();
+            processStartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            processStartInfo.FileName = "cmd.exe";
+          //  processStartInfo.UseShellExecute = false;
+            processStartInfo.Arguments = SVNCommand;
+            Process process = Process.Start(processStartInfo);
+            process.WaitForExit();
+
+            int eCode = process.ExitCode;
+            if (eCode == 0)
             {
-                Debug.Log("Committed Successfully");
-            }  
-            else  
+                Debug.Log("Couldn't be executed");
+            }
+            else
             {
-                Debug.Log("Failed to Commit");
-            }  
-        }  
-        catch (Exception ex)  
-        {  
+                Debug.Log("Executed Successfully");
+            }
+        }
+        catch (Exception ex)
+        {
             //Catch Exception
             Debug.Log("Failed to Commit");
-            Debug.Log("Caught Exception: "+ex);
-        }  
-    } 
+            Debug.Log("Caught Exception: " + ex);
+        }
+    }
 }
