@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using UnityEngine;
 using Debug = UnityEngine.Debug;
 
 namespace SVNPluginHelper.Scripts
@@ -41,30 +42,30 @@ namespace SVNPluginHelper.Scripts
         
         
         internal static void ExecuteSVNCommand(string SVNCommand)  
-        {  
+        {
+            Debug.Log(SVNCommand);
             try  
-            {  
-                Process.Start("CMD.exe",SVNCommand);
-                // ProcessStartInfo processStartInfo = new ProcessStartInfo();  
-                // //processStartInfo.WorkingDirectory = @"C:\Program Files\TortoiseSVN\bin";  
-                // processStartInfo.RedirectStandardInput = true;  
-                // processStartInfo.CreateNoWindow = true;  
-                // processStartInfo.WindowStyle = ProcessWindowStyle.Normal;  
-                // processStartInfo.FileName = "cmd.exe";                  
-                // processStartInfo.UseShellExecute = false;  
-                // processStartInfo.Arguments = SVNCommand;  
-                // Process process = Process.Start(processStartInfo);  
-                // process.WaitForExit();  
-                //
-                // int eCode = process.ExitCode;  
-                // if (eCode == 0)  
-                // {  
-                //     //Success  
-                // }  
-                // else  
-                // {  
-                //     //Failed
-                // }  
+            {
+                ProcessStartInfo processStartInfo = new ProcessStartInfo();  
+                processStartInfo.WorkingDirectory = Application.dataPath;  
+             //   processStartInfo.RedirectStandardInput = true;  
+            //    processStartInfo.CreateNoWindow = true;  
+               // processStartInfo.WindowStyle = ProcessWindowStyle.Normal;  
+                processStartInfo.FileName = "cmd.exe";                  
+              //  processStartInfo.UseShellExecute = false;  
+                processStartInfo.Arguments = SVNCommand;  
+                Process process = Process.Start(processStartInfo);  
+                process.WaitForExit();  
+      
+                int eCode = process.ExitCode;  
+                if (eCode == 0)  
+                {  
+                    //Success  
+                }  
+                else  
+                {  
+                    //Failed  
+                }  
             }  
             catch (Exception ex)  
             {  

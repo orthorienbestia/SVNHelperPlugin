@@ -117,7 +117,7 @@ namespace SVNPluginHelper.Scripts
         private static void MoveFromAssets()
         {
             var selectedObjectName = AssetDatabase.GetAssetPath(Selection.activeObject);
-            var svn_command = @"/c svn move "+selectedObjectName+" "+Application.dataPath;
+            var svn_command = @"/c svn move "+"D:/Git/Mine/Unity/SVNHelperPlugin/SVNHelperPlugin/Assets/SVNPluginHelper/Scripts"+" "+Application.dataPath;
             SVNProcessHandler.ExecuteSVNCommand(svn_command);
         }
 
