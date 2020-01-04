@@ -9,7 +9,8 @@
       <e p="Assets" t="Include">
         <e p="SVNPluginHelper" t="Include">
           <e p="Scripts" t="Include">
-            <e p="SVNHelper.cs" t="Include" />
+            <e p="SVNCommands.cs" t="Include" />
+            <e p="SVNProcessHandler.cs" t="Include" />
           </e>
         </e>
       </e>
