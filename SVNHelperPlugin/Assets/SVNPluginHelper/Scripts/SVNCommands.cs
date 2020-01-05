@@ -101,7 +101,7 @@ namespace SVNPluginHelper.Scripts
 
         #region Commands For Project Window
 
-        [MenuItem("Assets/SVN Commands/Commit",false)]
+        [MenuItem("Assets/SVN Commands/Commit")]
         private static void CommitFromAssets()
         {
             var svn_command = "commit /path:" + SelectedObjectPath + " /closeonend:0";
