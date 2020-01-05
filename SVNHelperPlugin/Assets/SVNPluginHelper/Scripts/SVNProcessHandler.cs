@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using UnityEditor;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 
@@ -7,70 +8,51 @@ namespace SVNPluginHelper.Scripts
 {
     public static class SVNProcessHandler
     {
-        private static string commandPrefix = @"/c " + "TortoiseProc.exe /command:";
+        private const string TortoiseCommandPrefix = @"/c TortoiseProc.exe /command:";
+        private const string SvnCommandPrefix = @"/c svn ";
 
-        internal static void ExecuteCommand(string SVNCommand)
+        internal static void ExecuteTortoiseSVNCommand(string Command)
         {
-            var cmd_name = SVNCommand.Split(' ')[0];
-            SVNCommand = commandPrefix + SVNCommand;
+            var cmd_name = Command.Split(' ')[0];
+            Command = TortoiseCommandPrefix + Command;
+            ExecuteCommand(Command, cmd_name);
+        }
+
+
+        internal static void ExecuteSVNCommand(string Command)
+        {
+            var cmd_name = Command.Split(' ')[0];
+            Command = SvnCommandPrefix + Command;
+            Debug.Log(Command);
+            ExecuteCommand(Command, cmd_name);
+        }
+
+        private static void ExecuteCommand(string Command, string cmd_name)
+        {
             try
             {
-                ProcessStartInfo processStartInfo = new ProcessStartInfo();
-                processStartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-                processStartInfo.FileName = "cmd.exe";
-                processStartInfo.Arguments = SVNCommand;
-                Process process = Process.Start(processStartInfo);
+                var processStartInfo = new ProcessStartInfo
+                {
+                    WindowStyle = ProcessWindowStyle.Hidden, FileName = "cmd.exe", Arguments = Command
+                };
+                var process = Process.Start(processStartInfo);
                 process.WaitForExit();
 
-                int eCode = process.ExitCode;
-                if (eCode == 0)
-                {
-                    Debug.Log($"{cmd_name} Executed Successfully with plugin warnings");
-                }
-                else
-                {
-                    Debug.Log($"{cmd_name} Executed Successfully");
-                }
+                var eCode = process.ExitCode;
+                Debug.Log(eCode == 0
+                    ? $"{cmd_name} Executed Successfully with plugin warnings"
+                    : $"{cmd_name} Executed Successfully");
             }
             catch (Exception ex)
             {
                 //Catch Exception
-                Debug.Log($"{cmd_name}: Failed to execute command " + SVNCommand);
+                Debug.Log($"{cmd_name}: Failed to execute command " + Command);
                 Debug.Log($"{cmd_name}: Caught Exception: " + ex);
             }
-        }
-        
-        
-        internal static void ExecuteSVNCommand(string SVNCommand)  
-        {
-            Debug.Log(SVNCommand);
-            try  
+            finally
             {
-                ProcessStartInfo processStartInfo = new ProcessStartInfo();  
-                processStartInfo.WorkingDirectory = Application.dataPath;  
-             //   processStartInfo.RedirectStandardInput = true;  
-            //    processStartInfo.CreateNoWindow = true;  
-               // processStartInfo.WindowStyle = ProcessWindowStyle.Normal;  
-                processStartInfo.FileName = "cmd.exe";                  
-              //  processStartInfo.UseShellExecute = false;  
-                processStartInfo.Arguments = SVNCommand;  
-                Process process = Process.Start(processStartInfo);  
-                process.WaitForExit();  
-      
-                int eCode = process.ExitCode;  
-                if (eCode == 0)  
-                {  
-                    //Success  
-                }  
-                else  
-                {  
-                    //Failed  
-                }  
-            }  
-            catch (Exception ex)  
-            {  
-                //Catch Exception  
-            }  
-        }  
+                AssetDatabase.Refresh();
+            }
+        }
     }
 }

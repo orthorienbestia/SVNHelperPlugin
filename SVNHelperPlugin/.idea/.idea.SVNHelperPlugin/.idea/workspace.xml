@@ -4,8 +4,6 @@
     <list default="true" id="a6cd8697-9964-4915-9386-999c7824276f" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj.meta" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SVNPluginHelper/Scripts/SVNCommands.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SVNPluginHelper/Scripts/SVNCommands.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SVNPluginHelper/Scripts/SVNProcessHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SVNPluginHelper/Scripts/SVNProcessHandler.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,15 +14,17 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/SVNPluginHelper/Scripts/SVNProcessHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SVNPluginHelper/Scripts/SVNCommands.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SVNPluginHelper/Scripts/SVNProcessHandler.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/SVNPluginHelper/Scripts/SVNHelper.cs" />
-        <option value="$PROJECT_DIR$/Assets/SVNPluginHelper/Scripts/SVNProcessHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SVNProcessHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SVNCommands.cs" />
         <option value="$PROJECT_DIR$/Assets/SVNPluginHelper/Scripts/SVNCommands.cs" />
+        <option value="$PROJECT_DIR$/Assets/SVNPluginHelper/Scripts/SVNProcessHandler.cs" />
       </list>
     </option>
   </component>
@@ -99,7 +99,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1578141918179</updated>
-      <workItem from="1578141921849" duration="10451000" />
+      <workItem from="1578141921849" duration="15415000" />
     </task>
     <servers />
   </component>
