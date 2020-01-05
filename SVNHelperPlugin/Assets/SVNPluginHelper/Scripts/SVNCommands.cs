@@ -4,12 +4,15 @@
  *    https://tortoisesvn.net/docs/release/TortoiseSVN_en/tsvn-automation.html#tsvn-automation-basics
  */
 
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
 namespace SVNPluginHelper.Scripts
 {
+    [SuppressMessage("ReSharper", "StringLiteralTypo")]
+    [SuppressMessage("ReSharper", "CommentTypo")]
     public static class SVNCommands
     {
         #region Fields and Properties

@@ -1,10 +1,14 @@
 using System;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 using Debug = UnityEngine.Debug;
 
 namespace SVNPluginHelper.Scripts
 {
+    [SuppressMessage("ReSharper", "StringLiteralTypo")]
+    [SuppressMessage("ReSharper", "CommentTypo")]
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
     public static class SVNProcessHandler
     {
         private const string TortoiseCommandPrefix = @"/c TortoiseProc.exe /command:";
@@ -34,6 +38,7 @@ namespace SVNPluginHelper.Scripts
                     WindowStyle = ProcessWindowStyle.Hidden, FileName = "cmd.exe", Arguments = Command
                 };
                 var process = Process.Start(processStartInfo);
+                if (process == null) return;
                 process.WaitForExit();
 
                 var eCode = process.ExitCode;
