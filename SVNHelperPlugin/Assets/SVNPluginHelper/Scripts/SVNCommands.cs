@@ -4,7 +4,6 @@
  *https://tortoisesvn.net/docs/release/TortoiseSVN_en/tsvn-automation.html#tsvn-automation-basics
  */
 
-using System;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
@@ -119,6 +118,12 @@ namespace SVNPluginHelper.Scripts
         private static void UpdateToRevisionFromAssets()
         {
             var svn_command = @"update /path:" + SelectedObjectPath + " /rev /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
+        }
+        [MenuItem("Assets/SVN Commands/Log")]
+        private static void LogFromAssets()
+        {
+            var svn_command = @"log /path:" + SelectedObjectPath + " /closeonend:0";
             SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
         }
 

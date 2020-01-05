@@ -5,6 +5,7 @@
       <change afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj.meta" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SVNPluginHelper/Scripts/SVNCommands.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SVNPluginHelper/Scripts/SVNCommands.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SVNPluginHelper/Scripts/SVNProcessHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SVNPluginHelper/Scripts/SVNProcessHandler.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +38,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TWShift.4" value="true" />
@@ -100,7 +102,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1578141918179</updated>
-      <workItem from="1578141921849" duration="18923000" />
+      <workItem from="1578141921849" duration="19957000" />
     </task>
     <servers />
   </component>
