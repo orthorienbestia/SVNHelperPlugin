@@ -34,6 +34,16 @@ namespace SVNPluginHelper.Scripts
             }
         }
 
+        private static string SelectedObjectPathWithMeta
+        {
+            get
+            {
+                var result = "\"" + ProjectPath + AssetDatabase.GetAssetPath(Selection.activeObject) + "\" \"" +
+                             ProjectPath + AssetDatabase.GetAssetPath(Selection.activeObject) + ".meta" + "\"";
+                return result;
+            }
+        }
+
         #endregion
 
         private static string AssetsPath
@@ -106,7 +116,7 @@ namespace SVNPluginHelper.Scripts
             var svn_command = "commit /path:" + SelectedObjectPath + " /closeonend:0";
             SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
         }
-        
+
         [MenuItem("Assets/SVN Commands/Update to Head")]
         private static void UpdateToHeadFromAssets()
         {
@@ -120,6 +130,7 @@ namespace SVNPluginHelper.Scripts
             var svn_command = @"update /path:" + SelectedObjectPath + " /rev /closeonend:0";
             SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
         }
+
         [MenuItem("Assets/SVN Commands/Log")]
         private static void LogFromAssets()
         {
@@ -167,7 +178,7 @@ namespace SVNPluginHelper.Scripts
         [MenuItem("Assets/SVN Commands/Cut Versioned File")]
         private static void CutFromAssets()
         {
-            var path = ProjectPath + AssetDatabase.GetAssetPath(Selection.activeObject);
+            var path = SelectedObjectPathWithMeta;
             Debug.Log(path + " file has been cut");
             PlayerPrefs.SetString(CUT_KEY, path);
         }
@@ -175,7 +186,7 @@ namespace SVNPluginHelper.Scripts
         [MenuItem("Assets/SVN Commands/Paste Versioned File")]
         private static void PasteFromAssets()
         {
-            var dest_path = ProjectPath + AssetDatabase.GetAssetPath(Selection.activeObject);
+            var dest_path = SelectedObjectPath;
             var svn_command =
                 $"move {PlayerPrefs.GetString(CUT_KEY)} {dest_path}";
             SVNProcessHandler.ExecuteSVNCommand(svn_command);

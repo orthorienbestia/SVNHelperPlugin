@@ -5,17 +5,18 @@
     <e p="C:\Users\Akshay PC\.Rider2019.3\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\Akshay PC\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_SVNHelperPlugin.217707680.00" t="ExcludeRecursive" />
     <e p="D:\Git\Mine\Unity\SVNHelperPlugin\SVNHelperPlugin" t="IncludeRecursive">
-      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="SVNPluginHelper" t="Include">
           <e p="Scripts" t="Include">
             <e p="SVNCommands.cs" t="Include" />
+            <e p="SVNHelperDef.asmdef" t="Include" />
             <e p="SVNProcessHandler.cs" t="Include" />
           </e>
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
+      <e p="SVNHelperDef.csproj" t="IncludeRecursive" />
       <e p="SVNHelperPlugin.sln" t="IncludeFlat" />
       <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
