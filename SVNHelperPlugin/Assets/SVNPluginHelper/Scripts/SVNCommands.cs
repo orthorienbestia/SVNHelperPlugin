@@ -13,6 +13,8 @@ namespace SVNPluginHelper.Scripts
 {
     public static class SVNCommands
     {
+        #region Fields and Properties
+
         private static string ProjectPath
         {
             get
@@ -24,54 +26,74 @@ namespace SVNPluginHelper.Scripts
             }
         }
 
+        private static string SelectedObjectPath
+        {
+            get
+            {
+                var result = "\"" + ProjectPath + AssetDatabase.GetAssetPath(Selection.activeObject) + "\"";
+                return result;
+            }
+        }
+
+        #endregion
+
+        private static string AssetsPath
+        {
+            get
+            {
+                var result = "\"" + Application.dataPath + "\"";
+                return result;
+            }
+        }
+
         #region Commands For Menu
 
         [MenuItem("SVN Commands/Commit")]
         private static void CommitFromMenu()
         {
-            var svn_command = @"commit /path:" + Application.dataPath + " /logmsg:\"dummy log message\" /closeonend:0";
+            var svn_command = @"commit /path:" + AssetsPath + " /logmsg:\"dummy log message\" /closeonend:0";
             SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
         }
 
         [MenuItem("SVN Commands/Update/Update to Head")]
         private static void UpdateToHeadFromMenu()
         {
-            var svn_command = @"update /path:" + Application.dataPath + " /closeonend:0";
+            var svn_command = @"update /path:" + AssetsPath + " /closeonend:0";
             SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
         }
 
         [MenuItem("SVN Commands/Update/Update to Revision")]
         private static void UpdateToRevisionFromMenu()
         {
-            var svn_command = @"update /path:" + Application.dataPath + " /rev /closeonend:0";
+            var svn_command = @"update /path:" + AssetsPath + " /rev /closeonend:0";
             SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
         }
 
         [MenuItem("SVN Commands/Repository Status")]
         private static void RepoStatusFromMenu()
         {
-            var svn_command = @"repostatus /path:" + Application.dataPath + " /closeonend:0";
+            var svn_command = @"repostatus /path:" + AssetsPath + " /closeonend:0";
             SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
         }
 
         [MenuItem("SVN Commands/Repository Browser")]
         private static void RepoBrowserFromMenu()
         {
-            var svn_command = @"repobrowser /path:" + Application.dataPath + " /closeonend:0";
+            var svn_command = @"repobrowser /path:" + AssetsPath + " /closeonend:0";
             SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
         }
 
         [MenuItem("SVN Commands/Resolve")]
         private static void ResolveFromMenu()
         {
-            var svn_command = @"resolve /path:" + Application.dataPath + " /closeonend:0";
+            var svn_command = @"resolve /path:" + AssetsPath + " /closeonend:0";
             SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
         }
 
         [MenuItem("SVN Commands/Switch")]
         private static void SwitchFromMenu()
         {
-            var svn_command = @"switch /path:" + Application.dataPath + " /closeonend:0";
+            var svn_command = @"switch /path:" + AssetsPath + " /closeonend:0";
             SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
         }
 
@@ -79,51 +101,59 @@ namespace SVNPluginHelper.Scripts
 
         #region Commands For Project Window
 
-        [MenuItem("Assets/SVN Commands/Commit")]
+        [MenuItem("Assets/SVN Commands/Commit",false)]
         private static void CommitFromAssets()
         {
-            var selectedObjectName = AssetDatabase.GetAssetPath(Selection.activeObject);
-            var svn_command = @"commit /path:" + selectedObjectName + " /closeonend:0";
+            var svn_command = "commit /path:" + SelectedObjectPath + " /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
+        }
+        
+        [MenuItem("Assets/SVN Commands/Update to Head")]
+        private static void UpdateToHeadFromAssets()
+        {
+            var svn_command = @"update /path:" + SelectedObjectPath + " /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
+        }
+
+        [MenuItem("Assets/SVN Commands/Update to Revision")]
+        private static void UpdateToRevisionFromAssets()
+        {
+            var svn_command = @"update /path:" + SelectedObjectPath + " /rev /closeonend:0";
             SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
         }
 
         [MenuItem("Assets/SVN Commands/Rename")]
         private static void RenameFromAssets()
         {
-            var selectedObjectName = AssetDatabase.GetAssetPath(Selection.activeObject);
-            var svn_command = @"rename /path:" + selectedObjectName + " /closeonend:0";
+            var svn_command = @"rename /path:" + SelectedObjectPath + " /closeonend:0";
             SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
         }
 
         [MenuItem("Assets/SVN Commands/Revert")]
         private static void RevertFromAssets()
         {
-            var selectedObjectName = AssetDatabase.GetAssetPath(Selection.activeObject);
-            var svn_command = @"revert /path:" + selectedObjectName + " /closeonend:0";
+            var svn_command = @"revert /path:" + SelectedObjectPath + " /closeonend:0";
             SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
         }
 
         [MenuItem("Assets/SVN Commands/Add")]
         private static void AddFromAssets()
         {
-            var selectedObjectName = AssetDatabase.GetAssetPath(Selection.activeObject);
-            var svn_command = @"add /path:" + selectedObjectName + " /closeonend:0";
+            var svn_command = @"add /path:" + SelectedObjectPath + " /closeonend:0";
             SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
         }
 
         [MenuItem("Assets/SVN Commands/Resolve")]
         private static void ResolveFromAssets()
         {
-            var selectedObjectName = AssetDatabase.GetAssetPath(Selection.activeObject);
-            var svn_command = @"resolve /path:" + selectedObjectName + " /closeonend:0";
+            var svn_command = @"resolve /path:" + SelectedObjectPath + " /closeonend:0";
             SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
         }
 
         [MenuItem("Assets/SVN Commands/Diff Checker")]
         private static void DiffCheckerFromAssets()
         {
-            var selectedObjectName = AssetDatabase.GetAssetPath(Selection.activeObject);
-            var svn_command = @"diff /path:" + selectedObjectName + " /closeonend:0";
+            var svn_command = @"diff /path:" + SelectedObjectPath + " /closeonend:0";
             SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
         }
 

@@ -23,12 +23,12 @@ namespace SVNPluginHelper.Scripts
         {
             var cmd_name = Command.Split(' ')[0];
             Command = SvnCommandPrefix + Command;
-            Debug.Log(Command);
             ExecuteCommand(Command, cmd_name);
         }
 
         private static void ExecuteCommand(string Command, string cmd_name)
         {
+            Debug.Log(Command);
             try
             {
                 var processStartInfo = new ProcessStartInfo
