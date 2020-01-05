@@ -92,6 +92,13 @@ namespace SVNPluginHelper.Scripts
             SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
         }
 
+        [MenuItem("SVN Commands/Revert")]
+        private static void RevertFromMenu()
+        {
+            var svnCommand = @"revert /path:" + AssetsPath + " /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
+        }
+
         [MenuItem("SVN Commands/Resolve")]
         private static void ResolveFromMenu()
         {
@@ -103,6 +110,48 @@ namespace SVNPluginHelper.Scripts
         private static void SwitchFromMenu()
         {
             var svnCommand = @"switch /path:" + AssetsPath + " /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
+        }
+
+        [MenuItem("SVN Commands/Cleanup")]
+        private static void CleanupFromMenu()
+        {
+            var svnCommand = @"cleanup /path:" + AssetsPath + " /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
+        }
+
+        // [MenuItem("SVN Commands/Conflict Editor")]
+        // private static void ConflictEditorFromMenu()
+        // {
+        //     var svnCommand = @"conflicteditor /path:" + AssetsPath + " /closeonend:0";
+        //     SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
+        // }
+
+        [MenuItem("SVN Commands/Create Patch")]
+        private static void ConflictEditorFromMenu()
+        {
+            var svnCommand = @"createpatch /path:" + AssetsPath + " /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
+        }
+
+        [MenuItem("SVN Commands/Shelve")]
+        private static void ShelveFromMenu()
+        {
+            var svnCommand = @"shelve /path:" + AssetsPath + " /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
+        }
+
+        [MenuItem("SVN Commands/Unshelve")]
+        private static void UnShelveFromMenu()
+        {
+            var svnCommand = @"unshelve /path:" + AssetsPath + " /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
+        }
+
+        [MenuItem("SVN Commands/Settings")]
+        private static void SettingsFromMenu()
+        {
+            var svnCommand = @"settings /path:" + AssetsPath + " /closeonend:0";
             SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
         }
 
@@ -173,6 +222,55 @@ namespace SVNPluginHelper.Scripts
             SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
         }
 
+        [MenuItem("Assets/SVN Commands/Lock")]
+        private static void LockFromAssets()
+        {
+            var svnCommand = @"lock /path:" + SelectedObjectPath + " /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
+        }
+
+        [MenuItem("Assets/SVN Commands/Unlock")]
+        private static void UnlockFromAssets()
+        {
+            var svnCommand = @"unlock /path:" + SelectedObjectPath + " /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
+        }
+
+        [MenuItem("Assets/SVN Commands/Properties")]
+        private static void PropertiesFromAssets()
+        {
+            var svnCommand = @"properties /path:" + SelectedObjectPath + " /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
+        }
+
+        [MenuItem("Assets/SVN Commands/Revision Graph")]
+        private static void RevisionGraphFromAssets()
+        {
+            var svnCommand = @"revisiongraph /path:" + SelectedObjectPath + " /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
+        }
+
+        [MenuItem("Assets/SVN Commands/Cleanup")]
+        private static void CleanupFromAssets()
+        {
+            var svnCommand = @"cleanup /path:" + SelectedObjectPath + " /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
+        }
+
+        [MenuItem("Assets/SVN Commands/Shelve")]
+        private static void ShelveFromAssets()
+        {
+            var svnCommand = @"shelve /path:" + SelectedObjectPath + " /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
+        }
+
+        [MenuItem("Assets/SVN Commands/Unshelve")]
+        private static void UnshelveFromAssets()
+        {
+            var svnCommand = @"unshelve /path:" + SelectedObjectPath + " /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
+        }
+
         private const string CutKey = "SVN_CutFromAssets";
 
         [MenuItem("Assets/SVN Commands/Cut Versioned File")]
@@ -197,6 +295,13 @@ namespace SVNPluginHelper.Scripts
         private static bool CheckIfCanPasteFromAssets()
         {
             return PlayerPrefs.GetString(CutKey, "") != "";
+        }
+
+        [MenuItem("Assets/SVN Commands/Settings")]
+        private static void SettingsFromAssets()
+        {
+            var svnCommand = @"settings /path:" + SelectedObjectPath + " /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
         }
 
         #endregion

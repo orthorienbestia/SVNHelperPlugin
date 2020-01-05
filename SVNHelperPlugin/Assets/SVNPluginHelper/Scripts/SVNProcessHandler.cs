@@ -17,7 +17,6 @@ namespace SVNPluginHelper.Scripts
             ExecuteCommand(Command, cmd_name);
         }
 
-
         internal static void ExecuteSVNCommand(string Command)
         {
             var cmd_name = Command.Split(' ')[0];
