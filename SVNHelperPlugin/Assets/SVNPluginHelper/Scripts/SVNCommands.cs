@@ -1,7 +1,7 @@
 ﻿/*
  * References:
- * https://www.c-sharpcorner.com/UploadFile/dbd837/svn-api-with-C-Sharp-browse-files-in-svn706/
- *https://tortoisesvn.net/docs/release/TortoiseSVN_en/tsvn-automation.html#tsvn-automation-basics
+ *     https://www.c-sharpcorner.com/UploadFile/dbd837/svn-api-with-C-Sharp-browse-files-in-svn706/
+ *    https://tortoisesvn.net/docs/release/TortoiseSVN_en/tsvn-automation.html#tsvn-automation-basics
  */
 
 using System.Linq;
@@ -60,50 +60,50 @@ namespace SVNPluginHelper.Scripts
         [MenuItem("SVN Commands/Commit")]
         private static void CommitFromMenu()
         {
-            var svn_command = @"commit /path:" + AssetsPath + " /logmsg:\"dummy log message\" /closeonend:0";
-            SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
+            var svnCommand = @"commit /path:" + AssetsPath + " /logmsg:\"dummy log message\" /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
         }
 
         [MenuItem("SVN Commands/Update/Update to Head")]
         private static void UpdateToHeadFromMenu()
         {
-            var svn_command = @"update /path:" + AssetsPath + " /closeonend:0";
-            SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
+            var svnCommand = @"update /path:" + AssetsPath + " /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
         }
 
         [MenuItem("SVN Commands/Update/Update to Revision")]
         private static void UpdateToRevisionFromMenu()
         {
-            var svn_command = @"update /path:" + AssetsPath + " /rev /closeonend:0";
-            SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
+            var svnCommand = @"update /path:" + AssetsPath + " /rev /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
         }
 
         [MenuItem("SVN Commands/Repository Status")]
         private static void RepoStatusFromMenu()
         {
-            var svn_command = @"repostatus /path:" + AssetsPath + " /closeonend:0";
-            SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
+            var svnCommand = @"repostatus /path:" + AssetsPath + " /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
         }
 
         [MenuItem("SVN Commands/Repository Browser")]
         private static void RepoBrowserFromMenu()
         {
-            var svn_command = @"repobrowser /path:" + AssetsPath + " /closeonend:0";
-            SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
+            var svnCommand = @"repobrowser /path:" + AssetsPath + " /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
         }
 
         [MenuItem("SVN Commands/Resolve")]
         private static void ResolveFromMenu()
         {
-            var svn_command = @"resolve /path:" + AssetsPath + " /closeonend:0";
-            SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
+            var svnCommand = @"resolve /path:" + AssetsPath + " /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
         }
 
         [MenuItem("SVN Commands/Switch")]
         private static void SwitchFromMenu()
         {
-            var svn_command = @"switch /path:" + AssetsPath + " /closeonend:0";
-            SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
+            var svnCommand = @"switch /path:" + AssetsPath + " /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
         }
 
         #endregion
@@ -113,90 +113,90 @@ namespace SVNPluginHelper.Scripts
         [MenuItem("Assets/SVN Commands/Commit")]
         private static void CommitFromAssets()
         {
-            var svn_command = "commit /path:" + SelectedObjectPath + " /closeonend:0";
-            SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
+            var svnCommand = "commit /path:" + SelectedObjectPath + " /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
         }
 
         [MenuItem("Assets/SVN Commands/Update to Head")]
         private static void UpdateToHeadFromAssets()
         {
-            var svn_command = @"update /path:" + SelectedObjectPath + " /closeonend:0";
-            SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
+            var svnCommand = @"update /path:" + SelectedObjectPath + " /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
         }
 
         [MenuItem("Assets/SVN Commands/Update to Revision")]
         private static void UpdateToRevisionFromAssets()
         {
-            var svn_command = @"update /path:" + SelectedObjectPath + " /rev /closeonend:0";
-            SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
+            var svnCommand = @"update /path:" + SelectedObjectPath + " /rev /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
         }
 
         [MenuItem("Assets/SVN Commands/Log")]
         private static void LogFromAssets()
         {
-            var svn_command = @"log /path:" + SelectedObjectPath + " /closeonend:0";
-            SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
+            var svnCommand = @"log /path:" + SelectedObjectPath + " /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
         }
 
         [MenuItem("Assets/SVN Commands/Rename")]
         private static void RenameFromAssets()
         {
-            var svn_command = @"rename /path:" + SelectedObjectPath + " /closeonend:0";
-            SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
+            var svnCommand = @"rename /path:" + SelectedObjectPath + " /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
         }
 
         [MenuItem("Assets/SVN Commands/Revert")]
         private static void RevertFromAssets()
         {
-            var svn_command = @"revert /path:" + SelectedObjectPath + " /closeonend:0";
-            SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
+            var svnCommand = @"revert /path:" + SelectedObjectPath + " /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
         }
 
         [MenuItem("Assets/SVN Commands/Add")]
         private static void AddFromAssets()
         {
-            var svn_command = @"add /path:" + SelectedObjectPath + " /closeonend:0";
-            SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
+            var svnCommand = @"add /path:" + SelectedObjectPath + " /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
         }
 
         [MenuItem("Assets/SVN Commands/Resolve")]
         private static void ResolveFromAssets()
         {
-            var svn_command = @"resolve /path:" + SelectedObjectPath + " /closeonend:0";
-            SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
+            var svnCommand = @"resolve /path:" + SelectedObjectPath + " /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
         }
 
         [MenuItem("Assets/SVN Commands/Diff Checker")]
         private static void DiffCheckerFromAssets()
         {
-            var svn_command = @"diff /path:" + SelectedObjectPath + " /closeonend:0";
-            SVNProcessHandler.ExecuteTortoiseSVNCommand(svn_command);
+            var svnCommand = @"diff /path:" + SelectedObjectPath + " /closeonend:0";
+            SVNProcessHandler.ExecuteTortoiseSVNCommand(svnCommand);
         }
 
-        private const string CUT_KEY = "SVN_CutFromAssets";
+        private const string CutKey = "SVN_CutFromAssets";
 
         [MenuItem("Assets/SVN Commands/Cut Versioned File")]
         private static void CutFromAssets()
         {
             var path = SelectedObjectPathWithMeta;
             Debug.Log(path + " file has been cut");
-            PlayerPrefs.SetString(CUT_KEY, path);
+            PlayerPrefs.SetString(CutKey, path);
         }
 
         [MenuItem("Assets/SVN Commands/Paste Versioned File")]
         private static void PasteFromAssets()
         {
-            var dest_path = SelectedObjectPath;
-            var svn_command =
-                $"move {PlayerPrefs.GetString(CUT_KEY)} {dest_path}";
-            SVNProcessHandler.ExecuteSVNCommand(svn_command);
-            PlayerPrefs.SetString(CUT_KEY, "");
+            var destPath = SelectedObjectPath;
+            var svnCommand =
+                $"move {PlayerPrefs.GetString(CutKey)} {destPath}";
+            SVNProcessHandler.ExecuteSVNCommand(svnCommand);
+            PlayerPrefs.SetString(CutKey, "");
         }
 
         [MenuItem("Assets/SVN Commands/Paste Versioned File", true)]
         private static bool CheckIfCanPasteFromAssets()
         {
-            return PlayerPrefs.GetString(CUT_KEY, "") != "";
+            return PlayerPrefs.GetString(CutKey, "") != "";
         }
 
         #endregion
