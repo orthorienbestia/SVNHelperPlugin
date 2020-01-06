@@ -2,6 +2,7 @@
  * References:
  *     https://www.c-sharpcorner.com/UploadFile/dbd837/svn-api-with-C-Sharp-browse-files-in-svn706/
  *    https://tortoisesvn.net/docs/release/TortoiseSVN_en/tsvn-automation.html#tsvn-automation-basics
+ * 
  */
 
 using System.Diagnostics.CodeAnalysis;
@@ -17,7 +18,7 @@ namespace SVNPluginHelper.Scripts
     {
         #region Fields and Properties
 
-        private static string ProjectPath
+        internal static string ProjectPath
         {
             get
             {
@@ -49,7 +50,7 @@ namespace SVNPluginHelper.Scripts
 
         #endregion
 
-        private static string AssetsPath
+        internal static string AssetsPath
         {
             get
             {

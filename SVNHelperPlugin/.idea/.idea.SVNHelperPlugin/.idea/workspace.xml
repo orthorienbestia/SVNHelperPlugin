@@ -17,6 +17,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/SVNPluginHelper/Scripts/SVNCommands.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SVNPluginHelper/Scripts/SVNProcessHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SVNPluginHelper/Scripts/AssetDatabaseEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SVNPluginHelper/Scripts/SVNHelperDef.asmdef" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -27,6 +28,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/SVNCommands.cs" />
         <option value="$PROJECT_DIR$/Assets/SVNPluginHelper/Scripts/SVNProcessHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/SVNPluginHelper/Scripts/SVNCommands.cs" />
+        <option value="$PROJECT_DIR$/Assets/SVNPluginHelper/Scripts/AssetDatabaseEditor.cs" />
       </list>
     </option>
   </component>
@@ -104,6 +106,7 @@
       <updated>1578141918179</updated>
       <workItem from="1578141921849" duration="24020000" />
       <workItem from="1578212781347" duration="1655000" />
+      <workItem from="1578326204545" duration="4783000" />
     </task>
     <servers />
   </component>

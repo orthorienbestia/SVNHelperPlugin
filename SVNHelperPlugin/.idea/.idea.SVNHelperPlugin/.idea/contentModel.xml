@@ -8,6 +8,7 @@
       <e p="Assets" t="Include">
         <e p="SVNPluginHelper" t="Include">
           <e p="Scripts" t="Include">
+            <e p="AssetDatabaseEditor.cs" t="Include" />
             <e p="SVNCommands.cs" t="Include" />
             <e p="SVNHelperDef.asmdef" t="Include" />
             <e p="SVNProcessHandler.cs" t="Include" />
