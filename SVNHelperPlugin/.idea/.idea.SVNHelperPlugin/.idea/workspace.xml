@@ -5,7 +5,6 @@
       <change afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj.meta" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SVNPluginHelper/Scripts/SVNCommands.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SVNPluginHelper/Scripts/SVNCommands.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SVNPluginHelper/Scripts/SVNProcessHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SVNPluginHelper/Scripts/SVNProcessHandler.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +25,8 @@
         <option value="$PROJECT_DIR$/Assets/SVNPluginHelper/Scripts/SVNHelper.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SVNProcessHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SVNCommands.cs" />
-        <option value="$PROJECT_DIR$/Assets/SVNPluginHelper/Scripts/SVNCommands.cs" />
         <option value="$PROJECT_DIR$/Assets/SVNPluginHelper/Scripts/SVNProcessHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/SVNPluginHelper/Scripts/SVNCommands.cs" />
       </list>
     </option>
   </component>
@@ -104,7 +103,7 @@
       <option name="presentableId" value="Default" />
       <updated>1578141918179</updated>
       <workItem from="1578141921849" duration="24020000" />
-      <workItem from="1578212781347" duration="170000" />
+      <workItem from="1578212781347" duration="1655000" />
     </task>
     <servers />
   </component>
